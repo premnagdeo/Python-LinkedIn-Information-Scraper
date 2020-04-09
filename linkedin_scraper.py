@@ -38,7 +38,7 @@ elementID.submit()
 time.sleep(5)
 
 #Profile Link to be scraped
-link = 'https://www.linkedin.com/in/manmeetakali/'
+link = 'https://www.linkedin.com/in/premnagdeo/'
 browser.get(link)
 
 #pause before scrolling
