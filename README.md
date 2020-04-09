@@ -29,7 +29,8 @@ Given the URL of the profile, it gets the Name, Title, Education History, Projec
 ## Installation
 
 ### Clone
-Clone this repo to your local machine using https://github.com/premnagdeo/Python-LinkedIn-Information-Scraper
+Clone this repo to your local machine using 
+> git clone https://github.com/premnagdeo/Python-LinkedIn-Information-Scraper.git
 
 ### Chrome Web Driver
 The Chrome Driver can be found here: https://chromedriver.chromium.org/downloads
