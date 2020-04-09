@@ -38,7 +38,7 @@ elementID.submit()
 time.sleep(5)
 
 #Profile Link to be scraped
-link = 'https://www.linkedin.com/in/premnagdeo/'
+link = "https://www.linkedin.com/in/manmeetakali/"
 browser.get(link)
 
 #pause before scrolling
@@ -243,6 +243,9 @@ try:
     certificates_section = soup.find('section', {'id': 'certifications-section'})
 
     list_items = certificates_section.find('ul', {'class': 'pv-profile-section__section-info section-info pv-profile-section__section-info--has-more'})
+except:
+    pass
+try:
     if list_items is None:
         list_items = certificates_section.find('ul', {'class': 'pv-profile-section__section-info section-info pv-profile-section__section-info--has-no-more'})
 
@@ -278,13 +281,17 @@ except:
 
 #Experience Section
 experience_info_list = []
-
+list_items = []
+items = []
 
 try:
     experience_section = soup.find('section', {'class': 'experience-section'})
     #print(experience_section)
 
     list_items = experience_section.find('ul', {'class': 'pv-profile-section__section-info section-info pv-profile-section__section-info--has-more'})
+except:
+    pass
+try:
     if list_items is None:
         list_items = experience_section.find('ul', {'class': 'pv-profile-section__section-info section-info pv-profile-section__section-info--has-no-more'})
 
@@ -335,7 +342,9 @@ except:
 skills_info_list = []
 try:
     skills_section = soup.find('section', {'class': 'pv-profile-section pv-skill-categories-section artdeco-container-card ember-view'})
-
+except:
+    pass
+try:
     if skills_section is None:
         skills_section = soup.find('section', {'class': 'pv-profile-section pv-skill-categories-section artdeco-container-card first-degree ember-view'})
 
@@ -350,18 +359,35 @@ except:
 
 #print(skills_info_list)
 
+
 #Volunteering Section:
 volunteer_info_list = []
+items = []
+list_items = []
 try:
-
     volunteer_section = soup.find('section', {'class': 'pv-profile-section volunteering-section ember-view'})
-
     list_items = volunteer_section.find('ul', {'class': 'pv-profile-section__section-info section-info pv-profile-section__section-info--has-more ember-view'})
+except:
+    pass
+
+try:
     if list_items is None:
-        list_items = volunteer_section.find('ul', {'class': 'pv-profile-section__section-info section-info pv-profile-section__section-info--has-no-more ember-view'})
+        list_items = volunteer_section.find('ul', {'class': 'pv-profile-section__section-info section-info pv-profile-section__section-info--has-no-more'})
+except:
+    pass
 
+try:
     items = list_items.find_all('li', {'class': 'pv-profile-section__sortable-item pv-profile-section__section-info-item relative pv-profile-section__sortable-item--v2 pv-profile-section__list-item sortable-item ember-view'})
+except:
+    pass
 
+try:
+    if items == []:
+        items = list_items.find_all('li', {'class': 'pv-profile-section__list-item pv-volunteering-entity pv-profile-section__card-item ember-view'})
+except:
+    pass
+
+try:
     for i in range(len(items)):
         curr_name = items[i].find('span', {'class': 'pv-entity__secondary-title'})
         curr_name = curr_name.get_text().strip()
@@ -370,18 +396,22 @@ try:
         curr_role = curr_role.get_text().strip()
 
         try:
+
             curr_dates = items[i].find('h4', {'class': 'pv-entity__date-range detail-facet inline-block t-14 t-black--light t-normal'})
             curr_dates = curr_dates.get_text().strip()
-            curr_dates = curr_dates.replace('Dates volunteered \n', '')
+            curr_dates = curr_dates.replace('Dates volunteered\n', '')
+
         except:
                 curr_dates = ''
 
-
         try:
+
             curr_description = items[i].find('p', {'class': 'pv-entity__description t-14 t-normal mt4'})
+
             curr_description = curr_description.get_text().strip()
         except:
             curr_description = ''
+
 
 
         volunteer_info_list.append([curr_name, curr_role, curr_dates, curr_description])
@@ -440,9 +470,9 @@ browser.close()
 
 final_all_lists = [basic_info_list, education_info_list, projects_info_list, certifications_info_list, experience_info_list, skills_info_list, volunteer_info_list, accomplishments_info_list, hobbies_info_list]
 
-json_data = {'basic_info_list' : basic_info_list, 'education_info_list' : education_info_list, 'projects_info_list': projects_info_list, 'certifications_info_list': certifications_info_list, 'experience_info_list': experience_info_list, 'skills_info_list': skills_info_list, 'volunteer_info_list': volunteer_info_list, 'accomplishments_info_list': accomplishments_info_list, 'hobbies_info_list': hobbies_info_list}
+json_data = {'basic_info_list' : basic_info_list, 'education_info_list': education_info_list, 'projects_info_list': projects_info_list, 'certifications_info_list': certifications_info_list, 'experience_info_list': experience_info_list, 'skills_info_list': skills_info_list, 'volunteer_info_list': volunteer_info_list, 'accomplishments_info_list': accomplishments_info_list, 'hobbies_info_list': hobbies_info_list}
 
-final_json_string = json.dumps(json_data, indent=4)
+final_json_string = json.dumps(json_data)
 print(final_json_string)
 
 fileheader = open("scraped_data.json", 'w')
