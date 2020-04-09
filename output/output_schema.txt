@@ -1,0 +1,48 @@
+basic_info_list:
+index 0: first_name
+index 1: last_name
+index 2: headline      
+index 3: linkedin_link  
+
+
+education_info_list: 
+index 0: institute_name
+index 1: degree_name
+index 2: field_of_study
+index 3: year_of_passing
+index 4: grade
+
+
+projects_info_list:
+index 0: project_name
+index 1: duration_of_project
+index 2: description_of_project
+
+
+certifications_info_list:
+index 0: certification_name
+index 1: issue_date
+index 2: certification_issuing_organization
+
+
+experience_info_list:
+index 0: company_name
+index 1: position_name
+index 2: dates_employed
+index 3: description
+
+
+skills_info_list:
+index 0: skill_name
+
+
+volunteer_info_list:
+index 0: organization_name
+index 1: role_name
+index 2: start_date
+index 3: end_date
+index 4: description
+
+
+accomplishments_info_list:
+index 0: accomplishment_title_name

@@ -1,0 +1,93 @@
+{
+    "basic_info_list": [
+        "Prem",
+        "Nagdeo",
+        "Third Year Engineering Student at Thadomal Shahani Engineering College, Mumbai",
+        "https://www.linkedin.com/in/premnagdeo/"
+    ],
+    "education_info_list": [
+        [
+            "Thadomal Shahani Engineering College, Mumbai",
+            "Bachelor of Engineering",
+            "Information Technology",
+            "2021",
+            "9.01"
+        ],
+        [
+            "RD and SH National College, Mumbai",
+            "High School",
+            "Science",
+            "2017",
+            "78.15%"
+        ],
+        [
+            "Lilavatibai Podar High School, Mumbai",
+            "ICSE",
+            "",
+            "2015",
+            "90.17%"
+        ]
+    ],
+    "projects_info_list": [
+        [
+            "ACCELEROMETER BASED ROBOT",
+            "Aug 2019 \u2013 Nov 2019",
+            "Designed & Created a robot car that can be controlled by using the accelerometer sensor of a smartphone."
+        ],
+        [
+            "HOLIDAY HOMES RENTAL WEBSITE",
+            "Aug 2019 \u2013 Nov 2019",
+            "Conceptualized & Created a website that offers user options select a holiday home based on their needs."
+        ]
+    ],
+    "certifications_info_list": [
+        [
+            "Learn Ethical Hacking from Scratch",
+            "Mar 2020",
+            "zSecurity"
+        ],
+        [
+            "Learn to Code in Python 3: Programming Beginner to Advanced",
+            "Mar 2020",
+            "Udemy"
+        ],
+        [
+            "Programming Foundations with JavaScript, HTML and CSS",
+            "Mar 2020",
+            "Coursera"
+        ],
+        [
+            "Python for Everybody - a 5 Course Specialization by University of Michigan",
+            "Mar 2020",
+            "Coursera"
+        ]
+    ],
+    "experience_info_list": [
+        [
+            "Win Trendz Exim Private Limited",
+            "Assistant Network Engineer",
+            "Jun 2017 \u2013 Dec 2019",
+            "Inspected and identified vulnerabilities in the Internal and External Networks.Built a Python application that streamlined the accounting process of the company and saved 20-25 manhours per week by automating the payment tracking process."
+        ]
+    ],
+    "skills_info_list": [
+        "Python",
+        "Java",
+        "HTML5",
+        "Data Structures",
+        "Web Development",
+        "Engineering",
+        "Information Technology",
+        "Cascading Style Sheets (CSS)",
+        "Microsoft Office",
+        "SQL",
+        "C++",
+        "Microsoft Excel",
+        "Microsoft Word",
+        "Microsoft PowerPoint",
+        "Python (Programming Language)",
+        "HTML"
+    ],
+    "volunteer_info_list": [],
+    "accomplishments_info_list": []
+}
