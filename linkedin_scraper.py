@@ -13,7 +13,7 @@ capabilities['acceptSslCerts'] = True
 capabilities['acceptInsecureCerts'] = True
 
 #Initialize the chrome webdriver as 'browser'
-browser = webdriver.Chrome(options=chrome_options,  desired_capabilities=capabilities)
+browser = webdriver.Chrome(options=chrome_options, desired_capabilities=capabilities)
 
 #To initialize the webdriver in a new window for Debugging:
 #browser = webdriver.Chrome('chromedriver.exe')
@@ -135,12 +135,6 @@ basic_info_list.append(last_name)
 headline = name_div.find('h2').get_text().strip()
 basic_info_list.append(headline)
 basic_info_list.append(link)
-
-#appending empty strings for email_id, phone_number, age and github_link
-basic_info_list.append('')
-basic_info_list.append('')
-basic_info_list.append('')
-basic_info_list.append('')
 
 #print(basic_info_list)
 
@@ -444,18 +438,14 @@ try:
     list_items = honors_section.find_all('li', {'class': 'pv-accomplishments-block__summary-list-item'})
 
     for i in range(len(list_items)):
-        # appending empty string for year field
-        accomplishments_info_list.append([list_items[i].get_text().strip(), ""])
+        accomplishments_info_list.append(list_items[i].get_text().strip())
 
 except:
     pass
 
-
-#empty hobbies_info_list because it is not available on linkedin
-hobbies_info_list = []
-
 #Close the browser once scraping is done
 browser.close()
+
 
 #TESTING OUTPUTS
 #print("LISTS")
@@ -468,11 +458,11 @@ browser.close()
 #print(volunteer_info_list)
 #print(accomplishments_info_list)
 
-final_all_lists = [basic_info_list, education_info_list, projects_info_list, certifications_info_list, experience_info_list, skills_info_list, volunteer_info_list, accomplishments_info_list, hobbies_info_list]
+final_all_lists = [basic_info_list, education_info_list, projects_info_list, certifications_info_list, experience_info_list, skills_info_list, volunteer_info_list, accomplishments_info_list]
 
-json_data = {'basic_info_list' : basic_info_list, 'education_info_list': education_info_list, 'projects_info_list': projects_info_list, 'certifications_info_list': certifications_info_list, 'experience_info_list': experience_info_list, 'skills_info_list': skills_info_list, 'volunteer_info_list': volunteer_info_list, 'accomplishments_info_list': accomplishments_info_list, 'hobbies_info_list': hobbies_info_list}
+json_data = {'basic_info_list': basic_info_list, 'education_info_list': education_info_list, 'projects_info_list': projects_info_list, 'certifications_info_list': certifications_info_list, 'experience_info_list': experience_info_list, 'skills_info_list': skills_info_list, 'volunteer_info_list': volunteer_info_list, 'accomplishments_info_list': accomplishments_info_list}
 
-final_json_string = json.dumps(json_data)
+final_json_string = json.dumps(json_data, indent=4)
 print(final_json_string)
 
 fileheader = open("scraped_data.json", 'w')
