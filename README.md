@@ -4,7 +4,7 @@ LinkedIn Scraper using Python 3.7.2
 
 Useful for gathering data of a user from LinkedIn.
 
-Given the URL of the profile, it gets the Name, Title, Education History, Project History, Employment History, Certifications, Project, Skills, Accomplishments and Volunteering History.
+Given the URL of a LinkedIn profile, it gets the Name, Title, Education History, Project History, Employment History, Certifications, Project, Skills, Accomplishments and Volunteering History from the LinkedIn Profile.
 
 ## Libraries Used:
 
