@@ -442,7 +442,7 @@ final_all_lists = [basic_info_list, education_info_list, projects_info_list, cer
 
 json_data = {'basic_info_list' : basic_info_list, 'education_info_list' : education_info_list, 'projects_info_list': projects_info_list, 'certifications_info_list': certifications_info_list, 'experience_info_list': experience_info_list, 'skills_info_list': skills_info_list, 'volunteer_info_list': volunteer_info_list, 'accomplishments_info_list': accomplishments_info_list, 'hobbies_info_list': hobbies_info_list}
 
-final_json_string = json.dumps(json_data)
+final_json_string = json.dumps(json_data, indent=4)
 print(final_json_string)
 
 fileheader = open("scraped_data.json", 'w')
