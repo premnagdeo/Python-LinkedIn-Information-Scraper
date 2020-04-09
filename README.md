@@ -61,7 +61,7 @@ pip install selenium
 > python linkedin_scraper.py
 
 * Output of the program is saved in .json file named 'scraped_data.json' which is created at runtime.
-
+> [sample output](/output/scraped_data.json)
 ## Support
 
 Reach out to me at:
