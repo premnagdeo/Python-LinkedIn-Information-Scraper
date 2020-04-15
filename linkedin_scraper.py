@@ -352,6 +352,7 @@ try:
         try:
             curr_position = items[i].find('h3', {'class': 't-16 t-black t-bold'})
             curr_position = curr_position.get_text().strip()
+            curr_name = curr_name.replace("Company Name\n", '')
             position_list.append(curr_position)
         except Exception as e:
             # print("Experience curr_position Exception:", e)
